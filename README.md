@@ -1,6 +1,11 @@
 ## Hi there 👋
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&theme=dark)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=8&theme=dark&hide=TeX)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=ТВОЙ_НИК&show_icons=true&theme=dark)
+📫 Telegram: [@твой_ник](https://t.me/твой_ник)  
+📧 Email: name@domain.com
+🌐 [Сайт или портфолио](https://example.com)
+
 
 <!--
 **oncominglane/oncominglane** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
