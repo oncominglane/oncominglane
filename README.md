@@ -1,12 +1,11 @@
 ## Hi there 👋
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&theme=dark)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=8&theme=dark&hide=TeX,Jupyter%20Notebook)
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=oncominglane&show_icons=true&theme=dark)
 
-📫 Telegram: [@твой_ник](https://t.me/твой_ник)  
-📧 Email: name@domain.com
-🌐 [Сайт или портфолио](https://example.com)
+📫 Telegram: [@oncoming_lane](https://t.me/oncoming_lane)  
+🌐 [VK](https://vk.com/oncoming_lane)
+📧 Email: tulupov.nd@phystech.edu
 
 
 <!--
