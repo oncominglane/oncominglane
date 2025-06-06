@@ -1,8 +1,8 @@
 ## Hi there 👋
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&theme=dark)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=8&theme=dark&hide=TeX)
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=oncominglane&show_icons=true&theme=dark)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&hide=Jupyter%20Notebook&theme=dark)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=oncominglane&show_icons=true&theme=dark)
 
 📫 Telegram: [@твой_ник](https://t.me/твой_ник)  
 📧 Email: name@domain.com
