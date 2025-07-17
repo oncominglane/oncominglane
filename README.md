@@ -1,5 +1,5 @@
 ## Hi there 👋
-My name is Nick, I am a student at the Moscow Institute of Physics and Technology. 
+My name is Nick, I am a student at the Moscow Institute of Physics and Technology, Faculty of Radio Engineering and Computer Technology.
 
 My interests include radio communications, circuit engineering, electric motors for electric vehicles, and artificial intelligence.
 
