@@ -1,7 +1,7 @@
 ## Hi there 👋
 My name is Nick, I am a student at the Moscow Institute of Physics and Technology, Faculty of Radio Engineering and Computer Technology.
 
-My interests include radio communications, circuit engineering, electric motors for electric vehicles, and artificial intelligence.
+My interests include radio communications, circuit engineering and machine learning.
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=8&theme=dark&hide=TeX,Jupyter%20Notebook)
 
