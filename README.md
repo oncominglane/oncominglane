@@ -3,9 +3,9 @@ My name is Nick, I am a student at the Moscow Institute of Physics and Technolog
 
 My interests include radio communications, circuit engineering and machine learning.
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=8&theme=dark&hide=TeX,Jupyter%20Notebook)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=8&theme=dark&hide=TeX,Jupyter%20Notebook&cache_seconds=21600&v=2)
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=oncominglane&show_icons=true&theme=dark)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=oncominglane&show_icons=true&theme=dark&cache_seconds=21600&v=2)
 
 <p align="left">
   <a href="https://t.me/oncoming_lane" target="_blank">
@@ -36,18 +36,6 @@ My interests include radio communications, circuit engineering and machine learn
   &nbsp; JSC "PromSvyazRadio", JSC "Ampermagnit"
 </p>
 
-
 <!--
 **oncominglane/oncominglane** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
 -->
