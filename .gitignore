@@ -1,0 +1,29 @@
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# LaTeX temporary / misc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+
+# PDF viewer temp
+*.pdfsync
+
+# Editor / OS stuff
+.DS_Store
+Thumbs.db
+
+# VS Code (если не хочешь коммитить настройки)
+.vscode/
