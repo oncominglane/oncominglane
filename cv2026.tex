@@ -1,7 +1,8 @@
 \documentclass[12pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{tgpagella} % set the font-family to `TeX Gyre Pagella`
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Adventor}
 \usepackage{geometry}
 \usepackage{sectsty} % change the appearance of \section
 \usepackage{fontawesome5}
@@ -26,8 +27,8 @@
 \pagestyle{empty} % remove header, footer, pagenumbers, etc.
 
 \sectionfont{
-    \fontfamily{qag}\selectfont % change font-family to `TeX Gyre Adventor` with font-code `qag`
-    \sectionrule{0pt}{0pt}{-8pt}{1.5pt} % insert an horizontal rule -8pt below the title, with a thickness of 1pt
+    \sffamily
+    \sectionrule{0pt}{0pt}{-8pt}{1.5pt}
 }
 
 %%%%%%%%%%%%% Macros %%%%%%%%%%%%%
@@ -97,7 +98,7 @@
     \end{center}
     \hfill
     \Huge % font size
-    \fontfamily{phv}\selectfont % change font-family to `Helvetica` with font-code `phv`
+    \sffamily 
     \begin{center} \color{\mainColor} \textbf{\MakeUppercase{#1}} \color{black} \textbf{#2} \end{center}\par % \par create a new paragraph
     \negxvspace
     \job{#3}
@@ -130,6 +131,8 @@
   \svspace
 }
 
+\newcommand{\site}[1]{{\normalfont\sffamily\mdseries\small\color{grayShy}#1}}
+
 %%% Skills Macro %%%
 
 \newcommand{\simpleSkill}[1]{
@@ -152,22 +155,28 @@
 
 %%% Work Experience Macro %%%
 
-\newcommand{\work}[6]{
+\newcommand{\work}[4]{
     \noindent \textbf{#1}
     \hfill % the following is written at the right of the document on the same line
     \framebox{
       \parbox{8em}{
       \centering\textbf{#2}
     }} \par
-    \noindent \color{grayShy} \textsc{\MakeLowercase{#4}} \color{black} \par
-    \begin{itemize}
-          \item[\faAngleRight] #4
-          \negxvspace
-          \item[\faAngleRight] #5
-          \negxvspace
-          \item[\faAngleRight] #6
-    \end{itemize}
+    \noindent \color{grayShy} \textsc{\MakeLowercase{#3}} \color{black} \par
+    \noindent\hangindent=1.5em\hangafter=0 \textit{#4} \par
+    \mvspace
     \normalsize \par
+}
+
+\newcommand{\workSubrole}[3]{
+    \noindent \textbf{#1}
+    \hfill
+    \framebox{
+      \parbox{8em}{
+      \centering\textbf{#2}
+    }} \par
+    \noindent\hangindent=1.5em\hangafter=0 \textit{#3} \par
+    \svspace
 }
 
 %%% Education Macro %%%
@@ -195,6 +204,24 @@
     \par
 }
 
+\newcommand{\projectTitle}[1]{
+    \noindent\hangindent=1.5em\hangafter=0
+    \faAngleRight
+    \shspace
+    {\normalsize\textbf{#1}} \par
+    \negxvspace
+}
+
+\newcommand{\projectDesc}[1]{
+    {\small #1 \par}
+    \negxvspace
+}
+
+\newcommand{\projectTools}[1]{
+    {\small \textit{\textbf{Tools:}} #1 \par}
+    \mvspace
+}
+
 %%%%%%%%%%%%% Your CV below %%%%%%%%%%%%%
 
 \begin{document}
@@ -211,13 +238,15 @@
     \cvsubsection{\faLaptopCode}{Technical skills}
     \svspace
     
-    \doubleSkill{\faCode}{Programming languages}{C++ \textbullet{} C \textbullet{} Python \textbullet{} x86-64 assembly}
+    \doubleSkill{\faCode}{Programming languages}{C/C++ \textbullet{} Python \textbullet{} x86-64 assembly}
     
-    \doubleSkill{\faTools}{Tools}{MatLab \textbullet{} Micro-Cap \textbullet{} Motor-CAD \textbullet{} Git \textbullet{} LaTeX }
+    \doubleSkill{\faTools}{Tools}{MATLAB \textbullet{} Motor-CAD \textbullet{} Git \textbullet{} CMake \textbullet{} ISE Design Suite \textbullet{} LaTeX}
     
     \doubleSkill{\faDesktop}{Devices}{Arduino \textbullet{} STM32 \textbullet{} RaspberryPi}
+
+    \doubleSkill{\faMicrochip}{Embedded \& Interfaces}{UART \textbullet{} SPI \textbullet{} I2C \textbullet{} CAN \textbullet{} GPIO \textbullet{} ALSA}
     
-    \doubleSkill{\faLinux}{OS}{Windows \textbullet{} Ubuntu}
+    \doubleSkill{\faLinux}{OS}{Linux (Ubuntu, Armbian) \textbullet{} Windows}
     
     \doubleSkill{\faHammer}{Craft} {Soldering \textbullet{} Milling cutting \textbullet{} 3D printing \textbullet{} Laser cutting}
    
@@ -227,10 +256,10 @@
     \cvsubsection{\faHandsHelping}{Soft skills}
     \svspace
 
-    \simpleSkill{Problem-solving and critical thinking}
-    \simpleSkill{Communication}
-    \simpleSkill{Self-learning}
-    \simpleSkill{Planning}
+    \simpleSkill{Problem-solving in complex systems}
+    \simpleSkill{Self-learning and fast adaptation}
+    \simpleSkill{Technical communication}
+    \simpleSkill{System thinking}
     
 
     \cvsection{\faGraduationCap}{Education}
@@ -239,35 +268,29 @@
     \education{Moscow Institute of Physics and Technology}{2022 - 2026}{Department of Radio Engineering and Computer Technologies}
 
     \cvsection{\faDesktop}{Work}
-    \svspace
-    
-    \education{JSC PromSvyazRadio \href{http://prsvradio.ru/}{\textbf{ http://prsvradio.ru/}}}{02.2024 - Present}{Assistant to the Chief Engineer}
-    
-   \education{Moscow Institute of Physics and Technology \\- Department of Electric Mobility and Magnetic Systems \\ \href{https://mipt.ru/education/basic-departments/kafedra-elektromobilnosti-i-magnitnykh-sistem}{\textbf{ https://mipt.ru/.../kafedra-elektromobilnosti-i-magnitnykh-sistem}}}{9.2024 - 11.2024}{Technician}
-    
-    \education{JSC AMPEREMAGNETE  \href{https://ampere.amtc.ru/ru/}{\textbf{ https://ampere.amtc.ru/ru/}}}{10.2024 - 03.2025}{Intern in the Group for the Development of controllers for Electric Vehicles}
+\svspace
 
-    \education{JSC AMPEREMAGNETE  \href{https://ampere.amtc.ru/ru/}{\textbf{ https://ampere.amtc.ru/ru/}}}{03.2025 - Present}{Intern in the Artificial Intelligence Development Group}
+\work{JSC PromSvyazRadio \href{http://prsvradio.ru/}{\site{prsvradio.ru}}}{02.2024 -- Present}{Assistant Engineer}{Support for radio equipment diagnostics, technical documentation, and coordination of engineering tasks.}
 
+\noindent \textbf{JSC AMPEREMAGNETE \href{https://ampere.amtc.ru/ru/}{\site{ampere.amtc.ru/ru}}} \par
+\noindent \color{grayShy} \textsc{\MakeLowercase{Engineering Intern}} \color{black} \par
+\workSubrole{EV Controller Development Group}{09.2024 -- 03.2025}{Development of firmware logic for an AC charging-station controller board in accordance with the GB/T 18487 standard.}
+\workSubrole{AI Development Group}{03.2025 -- 02.2026}{Optimization of electric drive control systems and firmware development for power inverters.}
+\mvspace
 
-
+\work{Moscow Institute of Physics and Technology \href{https://mipt.ru/education/basic-departments/kafedra-elektromobilnosti-i-magnitnykh-sistem}{\site{mipt.ru/.../kafedra-elektromobilnosti-i-magnitnykh-sistem}} \\ Robotics and Electric Drive Laboratory}{02.2026 -- Present}{Research Technician}{Optimization of electric drive control systems and preparation of scientific papers.}
     
     \neghvspace
     \cvsection{\faBook}{Projects}
     \svspace
-    
-    \simpleSkill{\textbf{Electric drive calibration using reinforcement learning} 
-    [\href{https://github.com/oncominglane/rotor_calibration_using_reinforcement_learning}{Link!}]}
-   Calibration of Id/Iq currents for vector control of an electric motor using various types of Rl-agents. Training on a model in Motor-CAD, and further training on a measurement bench. \\
-    {\textit{\textbf{Tools:}} Python, } \\
-    
-    
-    \simpleSkill{\textbf{Radio station remote control system} 
-    [\href{https://github.com/oncoming-lane/Interface-radiostation}{Link!}]}
-   Control panel for the Motorola XTL 2500 mobile radio station. Implemented on NaPi single-board computers with a microphone and speaker, screen, and buttons (the old version is an operator console with an SGML-based graphical interface). Data is transmitted via Ethernet. \\
-    {\textit{\textbf{Tools:}} C/C++, Make, NaPi/RaspberryPi, circuit design and soldering } \\
 
-        
+\projectTitle{IPMSM Drive Control Optimization and Reinforcement Learning Research}
+\projectDesc{Developed and validated methods for IPMSM drive control optimization: a new inverter torque-estimation approach, AT32-based inverter firmware, and real test-bench experiments. Also investigated reinforcement-learning-based control in simulation. A related paper is under review in \textit{eTransportation (Q1)}.}
+\projectTools{C/C++, Python, Motor-CAD, embedded firmware, measurement bench}
+    
+\projectTitle{Remote Control System for Motorola XTL2500 Radio Station}
+\projectDesc{Built a distributed client-server system on NaPi boards for remote radio control. Implemented real-time bidirectional audio, command handling, and SB9600/SBEP protocol interaction with frame parsing and display decoding. Integrated ADC/DAC and UART/SPI/I2C interfaces; currently finalizing PCB, enclosure, and documentation.}
+\projectTools{C/C++, Linux, CMake, NaPi/Raspberry Pi, embedded interfaces, circuit design}
     
     
     \neghvspace
