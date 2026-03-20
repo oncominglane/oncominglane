@@ -85,7 +85,7 @@
 \newcommand{\job}[1]{ % `1` indicate the number of parameters given to the \name macro
   \large % font size
   \color{grayShy} % change the color to gray
-  \begin{center} \textsc{\MakeLowercase{#1}} \end{center}\par \mvspace % prints #1 (the title) centered and scripted
+  \begin{center} #1 \end{center}\par \mvspace % prints #1 centered
 }
 
 %%% Name Macro %%%
@@ -154,6 +154,7 @@
         \boxAwesome{#1} \textbf{#2}
         \svspace
     } \svspace \texttt{#3} \par
+    \vspace*{0.25em}
 }
 
 %%% Work Experience Macro %%%
@@ -165,14 +166,14 @@
       \parbox{8em}{
       \centering\textbf{#2}
     }} \par
-    \noindent \color{grayShy} \textsc{\MakeLowercase{#3}} \color{black} \par
+    \noindent {\normalsize\color{grayShy} #3} \color{black} \par
     \noindent\hangindent=1.5em\hangafter=0 #4 \par
     \mvspace
     \normalsize \par
 }
 
 \newcommand{\workSubrole}[3]{
-    \noindent \textbf{#1}
+    \noindent {\normalsize\textbf{#1}}
     \hfill
     \framebox{
       \parbox{8em}{
@@ -223,6 +224,7 @@
 \newcommand{\projectTools}[1]{
     {\small \textit{\textbf{Tools:}} #1 \par}
     \mvspace
+    \svspace
 }
 
 %%%%%%%%%%%%% Your CV below %%%%%%%%%%%%%
@@ -245,7 +247,7 @@
     
     \doubleSkill{\faTools}{Tools}{MATLAB \textbullet{} Motor-CAD \textbullet{} CMake \textbullet{} Git \textbullet{} ISE Design Suite \textbullet{} EasyEDA \textbullet{} LaTeX}
     
-    \doubleSkill{\faDesktop}{Devices}{Arduino \textbullet{} STM32 \textbullet{} AT32 \textbullet{} Raspberry Pi}
+    \doubleSkill{\faDesktop}{Devices}{Arduino \textbullet{} STM32 \textbullet{} AT32 \textbullet{} Raspberry Pi \textbullet{} NAPI}
 
     \doubleSkill{\faMicrochip}{Embedded \& Interfaces}{UART \textbullet{} SPI \textbullet{} I2C \textbullet{} CAN \textbullet{} GPIO \textbullet{} RS232 \textbullet{} ALSA}
     
@@ -276,7 +278,7 @@
 \work{PromSvyazRadio LLC  \href{http://prsvradio.ru/}{\site{prsvradio.ru}}}{02.2024 -- Present}{Assistant Engineer}{Support for radio equipment diagnostics, technical documentation, and coordination of engineering tasks.}
 
 \noindent \textbf{AmpereMagnete JSC  \href{https://ampere.amtc.ru/ru/}{\site{ampere.amtc.ru/ru}}} \par
-\noindent \color{grayShy} \textsc{Engineering Intern} \color{black} \par
+\noindent {\normalsize\color{grayShy} Engineering Intern} \color{black} \par
 \workSubrole{EV Controller Development Group}{09.2024 -- 03.2025}{Development of firmware logic for an AC charging-station controller board in accordance with the GB/T 18487 standard.}
 \workSubrole{AI Development Group}{03.2025 -- 02.2026}{Optimization of electric drive control systems and firmware development for power inverters.}
 \mvspace
@@ -292,7 +294,7 @@
 \projectTools{C/C++, Linux, CMake, NaPi/Raspberry Pi, embedded interfaces, circuit design}
 
 \projectTitle{IPMSM Drive Control Optimization and Reinforcement Learning Research}
-\projectDesc{Developed and validated methods for IPMSM drive control optimization, including a novel inverter torque estimation approach, AT32-based inverter firmware, and real test-bench experiments. Also investigated reinforcement learning methods for drive control in simulation. A related paper is under review in \textit{eTransportation (Q1)}.}
+\projectDesc{Developed and validated methods for IPMSM drive control optimization, including a novel inverter torque estimation approach, AT32-based inverter firmware, and real test-bench experiments. Also investigated reinforcement learning methods for drive control in simulation.}
 \projectTools{C/C++, Python, Motor-CAD, embedded firmware, measurement bench}
 
 \projectTitle{StandControl: Inverter Control System via CAN Bus}
