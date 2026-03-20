@@ -15,6 +15,9 @@
 \usepackage{enumitem}
 \usepackage{blindtext}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{fontawesome5}
+\usepackage{unicode-math}
 
 \geometry{ % set the document layout
   a4paper,
@@ -110,7 +113,7 @@
 
 \newcommand{\cvsection}[2]{
     \section*{
-        \color{\mainColor} \boxAwesome{#1} \negshspace \StrSplit{#2}{20}{\csA}{\csB} \csA\color{black}\csB
+        \color{\mainColor} \boxAwesome{#1} \negshspace #2
     }
 }
 
@@ -163,7 +166,7 @@
       \centering\textbf{#2}
     }} \par
     \noindent \color{grayShy} \textsc{\MakeLowercase{#3}} \color{black} \par
-    \noindent\hangindent=1.5em\hangafter=0 \textit{#4} \par
+    \noindent\hangindent=1.5em\hangafter=0 #4 \par
     \mvspace
     \normalsize \par
 }
@@ -175,7 +178,7 @@
       \parbox{8em}{
       \centering\textbf{#2}
     }} \par
-    \noindent\hangindent=1.5em\hangafter=0 \textit{#3} \par
+    \noindent\hangindent=1.5em\hangafter=0 #3 \par
     \svspace
 }
 
@@ -225,7 +228,7 @@
 %%%%%%%%%%%%% Your CV below %%%%%%%%%%%%%
 
 \begin{document}
-    \name{Nikolay Tulupov}{}{4 year student, 21 y.o.}
+    \name{Nikolay Tulupov}{}{4th year student, Embedded \& Radio Engineering}
 
     \info{\faEnvelopeOpen}{\texttt {tulupov.nd@phystech.edu}}
     \info{\faGithub}{\href{https://github.com/oncominglane}{\texttt{oncominglane}}}
@@ -240,11 +243,11 @@
     
     \doubleSkill{\faCode}{Programming languages}{C/C++ \textbullet{} Python \textbullet{} x86-64 assembly}
     
-    \doubleSkill{\faTools}{Tools}{MATLAB \textbullet{} Motor-CAD \textbullet{} Git \textbullet{} CMake \textbullet{} ISE Design Suite \textbullet{} LaTeX}
+    \doubleSkill{\faTools}{Tools}{MATLAB \textbullet{} Motor-CAD \textbullet{} CMake \textbullet{} Git \textbullet{} ISE Design Suite \textbullet{} EasyEDA \textbullet{} LaTeX}
     
-    \doubleSkill{\faDesktop}{Devices}{Arduino \textbullet{} STM32 \textbullet{} RaspberryPi}
+    \doubleSkill{\faDesktop}{Devices}{Arduino \textbullet{} STM32 \textbullet{} AT32 \textbullet{} Raspberry Pi}
 
-    \doubleSkill{\faMicrochip}{Embedded \& Interfaces}{UART \textbullet{} SPI \textbullet{} I2C \textbullet{} CAN \textbullet{} GPIO \textbullet{} ALSA}
+    \doubleSkill{\faMicrochip}{Embedded \& Interfaces}{UART \textbullet{} SPI \textbullet{} I2C \textbullet{} CAN \textbullet{} GPIO \textbullet{} RS232 \textbullet{} ALSA}
     
     \doubleSkill{\faLinux}{OS}{Linux (Ubuntu, Armbian) \textbullet{} Windows}
     
@@ -257,7 +260,7 @@
     \svspace
 
     \simpleSkill{Problem-solving in complex systems}
-    \simpleSkill{Self-learning and fast adaptation}
+    \simpleSkill{Fast learning and adaptability}
     \simpleSkill{Technical communication}
     \simpleSkill{System thinking}
     
@@ -270,29 +273,48 @@
     \cvsection{\faDesktop}{Work}
 \svspace
 
-\work{JSC PromSvyazRadio \href{http://prsvradio.ru/}{\site{prsvradio.ru}}}{02.2024 -- Present}{Assistant Engineer}{Support for radio equipment diagnostics, technical documentation, and coordination of engineering tasks.}
+\work{PromSvyazRadio LLC  \href{http://prsvradio.ru/}{\site{prsvradio.ru}}}{02.2024 -- Present}{Assistant Engineer}{Support for radio equipment diagnostics, technical documentation, and coordination of engineering tasks.}
 
-\noindent \textbf{JSC AMPEREMAGNETE \href{https://ampere.amtc.ru/ru/}{\site{ampere.amtc.ru/ru}}} \par
-\noindent \color{grayShy} \textsc{\MakeLowercase{Engineering Intern}} \color{black} \par
+\noindent \textbf{AmpereMagnete JSC  \href{https://ampere.amtc.ru/ru/}{\site{ampere.amtc.ru/ru}}} \par
+\noindent \color{grayShy} \textsc{Engineering Intern} \color{black} \par
 \workSubrole{EV Controller Development Group}{09.2024 -- 03.2025}{Development of firmware logic for an AC charging-station controller board in accordance with the GB/T 18487 standard.}
 \workSubrole{AI Development Group}{03.2025 -- 02.2026}{Optimization of electric drive control systems and firmware development for power inverters.}
 \mvspace
 
-\work{Moscow Institute of Physics and Technology \href{https://mipt.ru/education/basic-departments/kafedra-elektromobilnosti-i-magnitnykh-sistem}{\site{mipt.ru/.../kafedra-elektromobilnosti-i-magnitnykh-sistem}} \\ Robotics and Electric Drive Laboratory}{02.2026 -- Present}{Research Technician}{Optimization of electric drive control systems and preparation of scientific papers.}
+\work{Moscow Institute of Physics and Technology \\ Robotics and Electric Drive Laboratory \\ \href{https://mipt.ru/education/basic-departments/kafedra-elektromobilnosti-i-magnitnykh-sistem}{\site{mipt.ru/.../kafedra-elektromobilnosti-i-magnitnykh-sistem}}}{02.2026 -- Present}{Research Technician}{Optimization of electric drive control systems and preparation of scientific papers.}
     
     \neghvspace
     \cvsection{\faBook}{Projects}
     \svspace
 
-\projectTitle{IPMSM Drive Control Optimization and Reinforcement Learning Research}
-\projectDesc{Developed and validated methods for IPMSM drive control optimization: a new inverter torque-estimation approach, AT32-based inverter firmware, and real test-bench experiments. Also investigated reinforcement-learning-based control in simulation. A related paper is under review in \textit{eTransportation (Q1)}.}
-\projectTools{C/C++, Python, Motor-CAD, embedded firmware, measurement bench}
-    
 \projectTitle{Remote Control System for Motorola XTL2500 Radio Station}
-\projectDesc{Built a distributed client-server system on NaPi boards for remote radio control. Implemented real-time bidirectional audio, command handling, and SB9600/SBEP protocol interaction with frame parsing and display decoding. Integrated ADC/DAC and UART/SPI/I2C interfaces; currently finalizing PCB, enclosure, and documentation.}
+\projectDesc{Designed and developed a distributed client-server system on single-board computers (NaPi) for remote radio control. Implemented real-time bidirectional audio, control command handling, and SB9600/SBEP protocol interaction with frame parsing and display decoding. Integrated ADC/DAC and UART/SPI/I2C interfaces; currently working on PCB design, enclosure, and documentation.}
 \projectTools{C/C++, Linux, CMake, NaPi/Raspberry Pi, embedded interfaces, circuit design}
+
+\projectTitle{IPMSM Drive Control Optimization and Reinforcement Learning Research}
+\projectDesc{Developed and validated methods for IPMSM drive control optimization, including a novel inverter torque estimation approach, AT32-based inverter firmware, and real test-bench experiments. Also investigated reinforcement learning methods for drive control in simulation. A related paper is under review in \textit{eTransportation (Q1)}.}
+\projectTools{C/C++, Python, Motor-CAD, embedded firmware, measurement bench}
+
+\projectTitle{StandControl: Inverter Control System via CAN Bus}
+\projectDesc{Developed a client-server system for controlling a power inverter over CAN bus. Implemented a GUI for mode control (torque, speed, current), telemetry visualization, logging, and error handling. The server handles network communication and CAN message exchange (8-byte frames) with the inverter. The software is registered as a computer program.}
+\projectTools{C/C++, Python, CAN, TCP/IP, GUI development}
     
-    
+\cvsection{\faBookOpen}{Publications \& Conferences}
+\svspace
+
+\simpleSkill{\textbf{Experimental Identification and Implementation of a Compact Analytical Torque Model for IPMSM Drive Control} \\
+Paper under review in \textit{eTransportation (Q1)}}
+
+\simpleSkill{\textbf{III Conference "AI Technologies in Science and Education"}, MSU, December 2025 \\
+Best presentation award (Exact and Engineering Sciences section), abstract published in proceedings}
+
+\simpleSkill{\textbf{XII International Conference "Engineering \& Telecommunications (En\&T-2025)"}, MIPT, November 2025 \\
+Abstract published in conference proceedings}
+
+\simpleSkill{\textbf{68th All-Russian Scientific Conference MIPT}, MIPT, April 2025 \\
+Accepted for presentation}
+
+
     \neghvspace
     \cvsection{\faPuzzlePiece}{Hobbies \& Interests}
     \svspace
