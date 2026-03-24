@@ -1,0 +1,311 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Adventor}
+
+\newfontfamily\cyrillicfont{Palatino Linotype}
+\newfontfamily\cyrillicfontsf{Arial}
+\newfontfamily\cyrillicfonttt{Courier New}
+
+\usepackage{geometry}
+\usepackage{sectsty} % change the appearance of \section
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xstring}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\usepackage{enumitem}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{unicode-math}
+
+\geometry{
+  a4paper,
+  left=20mm,
+  right=20mm,
+  bottom=10mm,
+  top=15mm
+}
+  
+\pagestyle{empty}
+
+\sectionfont{
+    \sffamily
+    \sectionrule{0pt}{0pt}{-8pt}{1.5pt}
+}
+
+%%%%%%%%%%%%% Macros %%%%%%%%%%%%%
+
+%%%%%%%%%%%%% Colors %%%%%%%%%%%%%
+
+\definecolor{blueSky}{RGB}{49, 120, 198}
+\definecolor{orangeFruit}{RGB}{224, 128, 44}
+\definecolor{redBlood}{RGB}{188, 20, 20}
+\definecolor{grayShy}{RGB}{153, 150, 142}
+\definecolor{Blue}{RGB}{40, 150, 180}
+
+\newcommand{\mainColor}{Blue}
+
+%%%%%%%%%%%%% Spaces %%%%%%%%%%%%%
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789}
+
+\newcommand{\xhspace}{\hspace*{0.1em}}
+\newcommand{\shspace}{\hspace*{0.5em}}
+\newcommand{\mhspace}{\hspace*{1em}}
+
+\newcommand{\negxhspace}{\hspace*{-0.2em}}
+\newcommand{\negshspace}{\hspace*{-0.5em}}
+\newcommand{\negmhspace}{\hspace*{-1em}}
+\newcommand{\neghhspace}{\hspace*{-1.5em}}
+
+\newcommand{\negxvspace}{\vspace*{-0.2em}}
+\newcommand{\negsvspace}{\vspace*{-0.5em}}
+\newcommand{\negmvspace}{\vspace*{-1em}}
+\newcommand{\neghvspace}{\vspace*{-1.5em}}
+
+\newcommand{\svspace}{\vspace*{0.5em}}
+\newcommand{\mvspace}{\vspace*{1em}}
+
+\newcommand{\boxAwesome}[1]{
+   \makebox[1.50em][c]{
+      #1
+   }
+}
+
+\newcommand{\job}[1]{
+  \large
+  \color{grayShy}
+  \begin{center} #1 \end{center}\par \mvspace
+}
+
+\newcommand{\name}[3]{
+    \begin{center}
+        \begin{tikzpicture}
+            \clip (0,0)  circle (2.2cm) ;
+            \node[anchor=center] at (0, 0) {
+                \includegraphics[scale=0.4]{img/avatar.jpg}
+            };
+        \end{tikzpicture}
+    \end{center}
+    \hfill
+    \Huge
+    \sffamily 
+    \begin{center} \color{\mainColor} \textbf{\MakeUppercase{#1}} \color{black} \textbf{#2} \end{center}\par
+    \negxvspace
+    \job{#3}
+    \normalsize\normalfont
+    \color{black}
+}
+
+\newcommand{\cvsection}[2]{
+    \section*{
+        \color{\mainColor} \boxAwesome{#1} \negshspace #2
+    }
+}
+
+\newcommand{\cvsubsection}[2]{
+    \subsection*{
+        \boxAwesome{#1} #2
+    }
+}
+
+\newcommand{\info}[2]{
+  \noindent\hangindent=2em\hangafter=0
+  \boxAwesome{#1}
+  #2 \par
+  \svspace
+}
+
+\newcommand{\site}[1]{{\normalfont\sffamily\mdseries\small\color{grayShy}#1}}
+
+\newcommand{\simpleSkill}[1]{
+    \noindent\hangindent=1.5em\hangafter=0
+    \faAngleRight
+    \shspace
+    #1
+    \svspace
+    \par
+}
+
+\newcommand{\doubleSkill}[3]{
+    \noindent\hangindent=1.5em\hangafter=0
+    \parbox{30\spacebox} {
+        \faAngleRight
+        \boxAwesome{#1} \textbf{#2}
+        \svspace
+    } \svspace \texttt{#3} \par
+    \vspace*{0.25em}
+}
+
+\newcommand{\work}[4]{
+    \noindent \textbf{#1}
+    \hfill
+    \framebox{
+      \parbox{8em}{
+      \centering\textbf{#2}
+    }} \par
+    \noindent {\normalsize\color{grayShy}\textsc{\MakeLowercase{#3}}} \color{black} \par
+    \noindent\hangindent=1.5em\hangafter=0 #4 \par
+    \mvspace
+    \normalsize \par
+}
+
+\newcommand{\workSubrole}[3]{
+    \noindent {\normalsize\textbf{#1}}
+    \hfill
+    \framebox{
+      \parbox{8em}{
+      \centering\textbf{#2}
+    }} \par
+    \noindent\hangindent=1.5em\hangafter=0 #3 \par
+    \svspace
+}
+
+\newcommand{\education}[3]{
+   \noindent \textbf{#1}
+   \hfill
+   \framebox{
+      \parbox{8em}{
+      \centering\textbf{#2}
+    }} \par
+    \noindent \color{grayShy} \textsc{\MakeLowercase{#3}} \color{black} \par
+    \mvspace
+    \normalsize \par
+}
+
+\newcommand{\hobby}[2]{
+    \noindent\hangindent=1.5em\hangafter=0
+    \faAngleRight
+    \shspace
+    \boxAwesome{#1} #2
+    \svspace
+    \par
+}
+
+\newcommand{\projectTitle}[1]{
+    \noindent\hangindent=1.5em\hangafter=0
+    \faAngleRight
+    \shspace
+    {\normalsize\textbf{#1}} \par
+    \negxvspace
+}
+
+\newcommand{\projectDesc}[1]{
+    {\small #1 \par}
+    \negxvspace
+}
+
+\newcommand{\projectTools}[1]{
+    {\small \textit{\textbf{Tools:}} #1 \par}
+    \mvspace
+    \svspace
+}
+
+%%%%%%%%%%%%% Your CV below %%%%%%%%%%%%%
+
+\begin{document}
+    \name{Nikolay Tulupov}{}{студент 4 курса, встроенные системы и радиотехника}
+
+    \info{\faEnvelopeOpen}{\texttt {tulupov.nd@phystech.edu}}
+    \info{\faGithub}{\href{https://github.com/oncominglane}{\texttt{oncominglane}}}
+    \info{\faVk}{\href{https://vk.com/oncoming_lane}{\texttt{vk.com/oncoming\_lane}}}
+    \info{\faLink}{\href{https://t.me/oncoming_lane}{\texttt{t.me/oncoming\_lane}}}
+        
+    \negsvspace
+    \cvsection{\faDna}{Навыки}
+    \svspace
+    \cvsubsection{\faLaptopCode}{Технические навыки}
+    \svspace
+    
+    \doubleSkill{\faCode}{Языки программирования}{C/C++ \textbullet{} Python \textbullet{} x86-64 assembly}
+    
+    \doubleSkill{\faTools}{Инструменты}{MATLAB \textbullet{} Motor-CAD \textbullet{} CMake \textbullet{} Git \textbullet{} ISE Design Suite \textbullet{} EasyEDA \textbullet{} LaTeX}
+    
+    \doubleSkill{\faDesktop}{Устройства}{Arduino \textbullet{} STM32 \textbullet{} AT32 \textbullet{} Raspberry Pi \textbullet{} NAPI}
+
+    \doubleSkill{\faMicrochip}{Встраиваемые системы и интерфейсы}{UART \textbullet{} SPI \textbullet{} I2C \textbullet{} CAN \textbullet{} GPIO \textbullet{} RS232 \textbullet{} ALSA}
+    
+    \doubleSkill{\faLinux}{ОС}{Linux (Ubuntu, Armbian) \textbullet{} Windows}
+    
+    \doubleSkill{\faHammer}{Практические навыки}{Пайка \textbullet{} Фрезерная обработка \textbullet{} 3D-печать \textbullet{} Лазерная резка}
+   
+    \negsvspace
+    \cvsubsection{\faHandsHelping}{Гибкие навыки}
+    \svspace
+
+    \simpleSkill{Решение задач в сложных системах}
+    \simpleSkill{Быстрое обучение и адаптация}
+    \simpleSkill{Техническая коммуникация}
+    \simpleSkill{Системное мышление}
+    
+
+    \cvsection{\faGraduationCap}{Образование}
+    \svspace
+    
+    \education{Московский физико-технический институт}{2022 - 2026}{Факультет радиотехники и компьютерных технологий}
+
+    \cvsection{\faDesktop}{Опыт работы}
+\svspace
+
+\work{ПромСвязьРадио ООО  \href{http://prsvradio.ru/}{\site{prsvradio.ru}}}{02.2024 -- настоящее время}{Помощник инженера}{Поддержка диагностики радиооборудования, ведение технической документации и координация инженерных задач.}
+
+\noindent \textbf{АмперМагнит АО  \href{https://ampere.amtc.ru/ru/}{\site{ampere.amtc.ru/ru}}} \par
+\noindent {\normalsize\color{grayShy}\textsc{\MakeLowercase{Стажёр-инженер}}} \color{black} \par
+\workSubrole{Группа разработки контроллеров ЭВ}{09.2024 -- 03.2025}{Разработка логики прошивки платы контроллера AC зарядной станции в соответствии со стандартом GB/T 18487.}
+\workSubrole{Группа разработки ИИ}{03.2025 -- 02.2026}{Оптимизация систем управления электроприводами и разработка прошивок силовых инверторов.}
+\mvspace
+
+\work{Московский физико-технический институт \\ Лаборатория робототехники и электрического привода \\ \href{https://mipt.ru/education/basic-departments/kafedra-elektromobilnosti-i-magnitnykh-sistem}{\site{mipt.ru/.../kafedra-elektromobilnosti-i-magnitnykh-sistem}}}{02.2026 -- настоящее время}{Техник-исследователь}{Оптимизация систем управления электроприводами и подготовка научных публикаций.}
+    
+    \neghvspace
+    \cvsection{\faBook}{Проекты}
+    \svspace
+
+\projectTitle{Система удалённого управления радиостанцией Motorola XTL2500}
+\projectDesc{Спроектирована и разработана распределённая клиент-серверная система на одноплатных компьютерах (NaPi) для удалённого управления радиостанцией. Реализованы двунаправленный аудиопоток в реальном времени, обработка управляющих команд и взаимодействие по протоколам SB9600/SBEP с разбором кадров и декодированием дисплея. Интегрированы интерфейсы ADC/DAC и UART/SPI/I2C; ведётся разработка печатной платы, корпуса и документации.}
+\projectTools{C/C++, Linux, CMake, NaPi/Raspberry Pi, embedded interfaces, circuit design}
+
+\projectTitle{Оптимизация управления приводом IPMSM и исследование методов reinforcement learning}
+\projectDesc{Разработаны и верифицированы методы оптимизации управления приводом IPMSM, включая новый подход к оценке момента инвертора, прошивку инвертора на базе AT32 и эксперименты на реальном испытательном стенде. Также исследованы методы reinforcement learning для управления приводом в моделировании.}
+\projectTools{C/C++, Python, Motor-CAD, embedded firmware, measurement bench}
+
+\projectTitle{StandControl: система управления инвертором по CAN}
+\projectDesc{Разработана клиент-серверная система управления силовым инвертором по CAN. Реализован GUI для управления режимами (момент, скорость, ток), визуализации телеметрии, логирования и обработки ошибок. Сервер обеспечивает сетевое взаимодействие и обмен CAN-сообщениями (8-байтные кадры) с инвертором. Программа зарегистрирована как ПО.}
+\projectTools{C/C++, Python, CAN, TCP/IP, GUI development}
+    
+\cvsection{\faBookOpen}{Публикации и конференции}
+\svspace
+
+\simpleSkill{\textbf{Экспериментальная идентификация и реализация компактной аналитической модели момента для управления приводом IPMSM} \\
+Статья на рецензировании в \textit{eTransportation (Q1)}}
+
+\simpleSkill{\textbf{III конференция "ИИ технологии в науке и образовании"}, МГУ, декабрь 2025 \\
+Лучший доклад (секция точных и инженерных наук), тезисы опубликованы в сборнике}
+
+\simpleSkill{\textbf{XII международная конференция "Engineering \& Telecommunications (En\&T-2025)"}, МФТИ, ноябрь 2025 \\
+Тезисы опубликованы в сборнике}
+
+\simpleSkill{\textbf{68-я Всероссийская научная конференция МФТИ}, МФТИ, апрель 2025 \\
+Работа принята к участию}
+
+
+    \neghvspace
+    \cvsection{\faPuzzlePiece}{Хобби и интересы}
+    \svspace
+
+    \hobby{\faTv}{Радиотехника}
+    \hobby{\faGuitar}{Гитара}
+    \hobby{\faCar}{Автомобили}
+
+
+\end{document}

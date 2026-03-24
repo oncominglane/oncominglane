@@ -25,5 +25,5 @@
 .DS_Store
 Thumbs.db
 
-# VS Code (если не хочешь коммитить настройки)
+# VS Code 
 .vscode/
