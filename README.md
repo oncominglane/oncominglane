@@ -2,39 +2,17 @@
 
 I am Nikolay Tulupov, an Embedded & Control Systems Engineer student at MIPT.
 
+- 📡 Radio engineering and communication systems
 - 🔧 Embedded systems, firmware (C/C++)
 - ⚡ Electric drive control (IPMSM, inverters)
-- 📡 Radio engineering and communication systems
 - 🧠 Machine learning for control systems
 
 Currently working on:
-- Embedded firmware for power electronics
-- Control algorithms for electric drives
 - Distributed systems for radio control
-
-## 🚀 Key Projects
-
-### 🔹 StandControl — CAN-based inverter control system
-Client-server system for controlling a power inverter over CAN bus.  
-Includes GUI, telemetry, logging, and real-time control.
-
-**Tech:** C/C++, Python, CAN (PCAN), TCP/IP, DBC
+- Control algorithms for electric drives with RL-algorithms
+- Embedded firmware for power electronics
 
 ---
-
-### 🔹 IPMSM Drive Control Optimization
-Research and development of control algorithms for electric drives.  
-Includes firmware development (AT32) and experimental validation.
-
-**Tech:** C/C++, Python, Motor-CAD, MATLAB/Simulink, PyTorch
-
----
-
-### 🔹 Remote Control System for Motorola XTL2500
-Distributed system for remote radio control with real-time audio streaming.
-
-**Tech:** C/C++, Linux, Ethernet, UART/SPI/I2C, PCB design
-
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=6&theme=dark&hide=TeX,Jupyter%20Notebook,HTML&cache_seconds=21600)
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=oncominglane&show_icons=true&theme=dark&cache_seconds=21600&v=2)
