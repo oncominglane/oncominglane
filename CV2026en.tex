@@ -18,6 +18,7 @@
 \usepackage[none]{hyphenat}
 \usepackage{fontawesome5}
 \usepackage{unicode-math}
+\emergencystretch=3em
 
 \geometry{ % set the document layout
   a4paper,
@@ -161,14 +162,14 @@
 
 \newcommand{\work}[4]{
     \noindent \textbf{#1}
-    \hfill % the following is written at the right of the document on the same line
+    \hfill
     \framebox{
       \parbox{8em}{
       \centering\textbf{#2}
     }} \par
     \noindent {\normalsize\color{grayShy}\textsc{\MakeLowercase{#3}}} \color{black} \par
     \noindent\hangindent=1.5em\hangafter=0 #4 \par
-    \mvspace
+    \svspace
     \normalsize \par
 }
 
@@ -180,7 +181,7 @@
       \centering\textbf{#2}
     }} \par
     \noindent\hangindent=1.5em\hangafter=0 #3 \par
-    \svspace
+    \vspace*{0.25em}
 }
 
 %%% Education Macro %%%
@@ -217,11 +218,12 @@
 }
 
 \newcommand{\projectDesc}[1]{
-    {\small #1 \par}
+    {\small\linespread{1.05}\selectfont #1 \par}
     \negxvspace
 }
 
 \newcommand{\projectTools}[1]{
+    \svspace
     {\small \textit{\textbf{Tools:}} #1 \par}
     \mvspace
     \svspace
@@ -235,7 +237,7 @@
     \info{\faEnvelopeOpen}{\texttt {tulupov.nd@phystech.edu}}
     \info{\faGithub}{\href{https://github.com/oncominglane}{\texttt{oncominglane}}}
     \info{\faVk}{\href{https://vk.com/oncoming_lane}{\texttt{vk.com/oncoming\_lane}}}
-    \info{\faLink}{\href{https://t.me/oncoming_lane}{\texttt{t.me/oncoming\_lane}}}
+    \info{\faTelegram}{\href{https://t.me/oncoming_lane}{\texttt{t.me/oncoming\_lane}}}
         
     \negsvspace
     \cvsection{\faDna}{Skills}
@@ -245,7 +247,7 @@
     
     \doubleSkill{\faCode}{Programming languages}{C/C++ \textbullet{} Python \textbullet{} x86-64 assembly}
     
-    \doubleSkill{\faTools}{Tools}{MATLAB \textbullet{} Motor-CAD \textbullet{} CMake \textbullet{} Git \textbullet{} ISE Design Suite \textbullet{} EasyEDA \textbullet{} LaTeX}
+    \doubleSkill{\faTools}{Tools}{MATLAB \textbullet{} Motor-CAD \textbullet{} CMake \textbullet{} Git \textbullet{} Xilinx ISE \textbullet{} EasyEDA \textbullet{} LaTeX}
     
     \doubleSkill{\faDesktop}{Devices}{Arduino \textbullet{} STM32 \textbullet{} AT32 \textbullet{} Raspberry Pi \textbullet{} NAPI}
 
@@ -253,7 +255,7 @@
     
     \doubleSkill{\faLinux}{OS}{Linux (Ubuntu, Armbian) \textbullet{} Windows}
     
-    \doubleSkill{\faHammer}{Craft} {Soldering \textbullet{} Milling cutting \textbullet{} 3D printing \textbullet{} Laser cutting}
+    \doubleSkill{\faHammer}{Practical skills} {Soldering \textbullet{} Milling \textbullet{} 3D printing \textbullet{} Laser cutting}
    
    
 
@@ -262,45 +264,48 @@
     \svspace
 
     \simpleSkill{Problem-solving in complex systems}
-    \simpleSkill{Fast learning and adaptability}
-    \simpleSkill{Technical communication}
-    \simpleSkill{System thinking}
+    \simpleSkill{Fast learner and adaptable}
+    \simpleSkill{Technical communication skills}
+    \simpleSkill{Systems thinking}
     
 
     \cvsection{\faGraduationCap}{Education}
     \svspace
     
     \education{Moscow Institute of Physics and Technology}{2022 - 2026}{Department of Radio Engineering and Computer Technologies}
-
+    \negsvspace
     \cvsection{\faDesktop}{Work}
+
 \svspace
 
-\work{PromSvyazRadio LLC  \href{http://prsvradio.ru/}{\site{prsvradio.ru}}}{02.2024 -- Present}{Assistant Engineer}{Support for radio equipment diagnostics, technical documentation, and coordination of engineering tasks.}
-
+\work{PromSvyazRadio LLC  \href{http://prsvradio.ru/}{\site{prsvradio.ru}}}{02.2024 -- Present}{Assistant Engineer}{Participation in radio equipment diagnostics, technical documentation, and coordination of engineering tasks.}
+\vspace*{0.6em}
 \noindent \textbf{AmpereMagnete JSC  \href{https://ampere.amtc.ru/ru/}{\site{ampere.amtc.ru/ru}}} \par
 \noindent {\normalsize\color{grayShy}\textsc{\MakeLowercase{Engineering Intern}}} \color{black} \par
 \workSubrole{EV Controller Development Group}{09.2024 -- 03.2025}{Development of firmware logic for an AC charging-station controller board in accordance with the GB/T 18487 standard.}
-\workSubrole{AI Development Group}{03.2025 -- 02.2026}{Optimization of electric drive control systems and firmware development for power inverters.}
+\workSubrole{AI Development Group}{03.2025 -- 02.2026}{Optimization of electric drive control systems and development of embedded firmware for power inverters.}
 \mvspace
 
-\work{Moscow Institute of Physics and Technology \\ Robotics and Electric Drive Laboratory \\ \href{https://mipt.ru/education/basic-departments/kafedra-elektromobilnosti-i-magnitnykh-sistem}{\site{mipt.ru/.../kafedra-elektromobilnosti-i-magnitnykh-sistem}}}{02.2026 -- Present}{Research Technician}{Optimization of electric drive control systems and preparation of scientific papers.}
+\work{Moscow Institute of Physics and Technology \\ Robotics and Electric Drive Laboratory \\ \href{https://mipt.ru/education/basic-departments/kafedra-elektromobilnosti-i-magnitnykh-sistem}{\site{mipt.ru/.../kafedra-elektromobilnosti...}}}{02.2026 -- Present}{Research Technician}{Optimization of electric drive control systems and preparation of scientific publications.}
     
     \neghvspace
+    \svspace
     \cvsection{\faBook}{Projects}
     \svspace
+    
 
 \projectTitle{Remote Control System for Motorola XTL2500 Radio Station}
-\projectDesc{Designed and developed a distributed client-server system on single-board computers (NaPi) for remote radio control. Implemented real-time bidirectional audio, control command handling, and SB9600/SBEP protocol interaction with frame parsing and display decoding. Integrated ADC/DAC and UART/SPI/I2C interfaces; currently working on PCB design, enclosure, and documentation.}
-\projectTools{C/C++, Linux, CMake, NaPi/Raspberry Pi, embedded interfaces, circuit design}
+\projectDesc{Designed and implemented a distributed client-server system on single-board computers (NaPi) for remote radio control. Implemented real-time bidirectional audio streaming, command handling, and SB9600 protocol interaction with frame parsing and display decoding. Integrated ADC/DAC, UART/SPI/I2C interfaces. Currently developing PCB, enclosure, and technical documentation.}
+\projectTools{C/C++, Linux, CMake, NaPi/Raspberry Pi, Ethernet, UART/SPI/I2C, PCB design}
 
 \projectTitle{IPMSM Drive Control Optimization and Reinforcement Learning Research}
-\projectDesc{Developed and validated methods for IPMSM drive control optimization, including a novel inverter torque estimation approach, AT32-based inverter firmware, and real test-bench experiments. Also investigated reinforcement learning methods for drive control in simulation.}
-\projectTools{C/C++, Python, Motor-CAD, embedded firmware, measurement bench}
+\projectDesc{Developed and validated methods for IPMSM drive control optimization, including a novel inverter torque estimation approach, AT32-based inverter firmware, and experimental validation on a test bench. Investigated reinforcement learning methods for drive control in simulation.}
+\projectTools{Python, C/C++, Motor-CAD, MATLAB/Simulink, PyTorch, AT32, embedded firmware}
 
 \projectTitle{StandControl: Inverter Control System via CAN Bus}
-\projectDesc{Developed a client-server system for controlling a power inverter over CAN bus. Implemented a GUI for mode control (torque, speed, current), telemetry visualization, logging, and error handling. The server handles network communication and CAN message exchange (8-byte frames) with the inverter. The software is registered as a computer program.}
-\projectTools{C/C++, Python, CAN, TCP/IP, GUI development}
-    
+\projectDesc{Developed a client-server system for controlling a power inverter over CAN bus. Implemented a GUI for mode control (torque, speed, current), telemetry visualization, logging, and error handling.  Implemented CAN communication and network interface on the server side. The software is officially registered as a computer program.}
+\projectTools{C/C++, Python, CMake, CAN (PCAN), TCP/IP, DBC}
+
 \cvsection{\faBookOpen}{Publications \& Conferences}
 \svspace
 
@@ -308,7 +313,7 @@
 Paper under review in \textit{eTransportation (Q1)}}
 
 \simpleSkill{\textbf{III Conference "AI Technologies in Science and Education"}, MSU, December 2025 \\
-Best presentation award (Exact and Engineering Sciences section), abstract published in proceedings}
+Best presentation award (Exact and Engineering Sciences section), abstract published in conference proceedings}
 
 \simpleSkill{\textbf{XII International Conference "Engineering \& Telecommunications (En\&T-2025)"}, MIPT, November 2025 \\
 Abstract published in conference proceedings}
@@ -316,8 +321,12 @@ Abstract published in conference proceedings}
 \simpleSkill{\textbf{68th All-Russian Scientific Conference MIPT}, MIPT, April 2025 \\
 Accepted for presentation}
 
+\simpleSkill{\textbf{2026 IEEE 27th International Conference of Young Professionals in Electron Devices and Materials (EDM)}, Altai region, July 2026 \\
+Paper under review}
 
     \neghvspace
+    \svspace
+    \svspace
     \cvsection{\faPuzzlePiece}{Hobbies \& Interests}
     \svspace
 
