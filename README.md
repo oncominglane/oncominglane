@@ -13,9 +13,9 @@ Currently working on:
 - Embedded firmware for power electronics
 
 ---
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=6&theme=dark&hide=TeX,Jupyter%20Notebook,HTML&cache_seconds=21600)
+![Top Langs](https://github-readme-stats-green-one-98.vercel.app/api/top-langs/?username=oncominglane&layout=compact&langs_count=6&theme=dark&hide=Jupyter%20Notebook,TeX,HTML,Makefile&size_weight=0.5&count_weight=0.5&cache_seconds=21600)
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=oncominglane&show_icons=true&theme=dark&cache_seconds=21600&v=2)
+![GitHub stats](https://github-readme-stats-green-one-98.vercel.app/api?username=oncominglane&show_icons=true&theme=dark&cache_seconds=21600&v=2)
 
 <p align="left">
   <a href="https://t.me/oncoming_lane" target="_blank">
