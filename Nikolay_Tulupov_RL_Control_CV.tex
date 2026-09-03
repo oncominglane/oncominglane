@@ -1,0 +1,256 @@
+% Compile with pdfLaTeX.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% Palatino and Helvetica are the pdfLaTeX counterparts closest to the
+% TeX Gyre Pagella / Adventor pairing used in the original CV.
+\usepackage{mathpazo}
+\usepackage[scaled=0.92]{helvet}
+
+\usepackage[a4paper,left=17mm,right=17mm,top=14mm,bottom=14mm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\definecolor{accent}{RGB}{35,132,158}
+\definecolor{textgray}{RGB}{82,86,89}
+\definecolor{lightgray}{RGB}{150,153,155}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdfauthor={Nikolay Tulupov},
+  pdftitle={Nikolay Tulupov -- Reinforcement Learning and Control Systems Engineer}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{1.08}
+\emergencystretch=2em
+
+\titleformat{\section}
+  {\needspace{4\baselineskip}\sffamily\bfseries\large\color{accent}}
+  {}{0pt}{\MakeUppercase}
+  [\vspace{0.10em}\color{accent}\titlerule]
+\titlespacing*{\section}{0pt}{1.00em}{0.55em}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=0.28em,
+  topsep=0.32em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\cvrole}[4]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    >{\raggedleft\arraybackslash}p{0.27\textwidth}@{}}
+    {\sffamily\bfseries #1} & {\small\color{textgray}#4} \\
+    {\itshape #2} & {\small\color{lightgray}#3}
+  \end{tabularx}
+  \vspace{0.12em}
+}
+
+\newcommand{\project}[2]{%
+  \needspace{3\baselineskip}
+  {\sffamily\bfseries #1}\par
+  \vspace{0.12em}
+  #2
+}
+
+\newcommand{\skillrow}[2]{%
+  \textbf{#1}\hspace{0.45em}#2\par
+  \vspace{0.13em}
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+  {\fontsize{24}{27}\selectfont\sffamily\bfseries\color{accent}
+   NIKOLAY TULUPOV}\par
+  \vspace{0.22em}
+  {\large\sffamily\color{textgray}
+   Reinforcement Learning \& Control Systems Engineer}\par
+  \vspace{0.48em}
+  {\small
+    Moscow, Russia
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{tel:+79307297552}{+7 930 729-75-52}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{mailto:tulupov.nd@phystech.edu}{tulupov.nd@phystech.edu}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{https://t.me/oncoming_lane}{Telegram}
+  }\par
+  \vspace{0.16em}
+  {\small
+    \href{https://github.com/oncominglane}{GitHub}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{https://www.researchgate.net/profile/Nikolay-Tulupov}{ResearchGate}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{https://orcid.org/0009-0004-2017-2288}{ORCID: 0009-0004-2017-2288}
+  }
+\end{center}
+
+\section{Profile}
+
+Control systems and reinforcement learning engineer with over two years of
+engineering and applied R\&D experience. Specializes in learning-based control
+of PMSM electric drives, simulation, experimental validation, and engineering
+software development using Python, PyTorch, and MATLAB/Simulink. Co-author of
+an IEEE EDM 2026 publication and two registered software systems.
+
+\section{Core Expertise}
+
+\skillrow{Machine Learning \& RL:}{Python, PyTorch, reinforcement learning, TD3,
+actor--critic methods, reward design, experiment design}
+\skillrow{Control \& Modeling:}{control systems, PMSM/IPMSM drives, FOC,
+mathematical modeling, MATLAB/Simulink, Motor-CAD}
+\skillrow{Engineering \& Tools:}{C/C++, Git, Linux, CAN, STM32/AT32, power
+inverters, test-bench experiments}
+
+\section{Relevant Experience}
+
+\cvrole{Moscow Institute of Physics and Technology}
+       {Research Engineer, Robotics and Electric Drive Laboratory}
+       {Moscow, Russia}{Mar 2026 -- Present}
+\begin{itemize}
+  \item Research and develop PMSM electric-drive control methods, with a focus
+        on reinforcement learning for closed-loop control of physical systems.
+  \item Developed and evaluated a physics-informed TD3 approach for end-to-end
+        PMSM torque control and compared it with a classical FOC baseline.
+  \item Build software pipelines for test-bench data processing, experiment
+        automation, quantitative evaluation, and visualization.
+  \item Automate Motor-CAD calculations and electric-motor geometry optimization.
+  \item Conduct experimental validation and prepare scientific publications and
+        technical presentations on electric-drive control.
+\end{itemize}
+
+\vspace{0.35em}
+\cvrole{AmpereMagnete}
+       {Engineering Intern, Artificial Intelligence Group}
+       {Troitsk, Moscow, Russia}{Mar 2025 -- Mar 2026}
+\begin{itemize}
+  \item Developed and experimentally evaluated PMSM/IPMSM control and
+        calibration methods, including reinforcement-learning-based approaches.
+  \item Developed embedded firmware for an AT32-based power inverter and
+        software for remote inverter control and test-bench operation.
+  \item Implemented CAN-based telemetry acquisition, visualization, logging, and
+        experimental data analysis.
+  \item Developed OptiRunMotorCAD for automated calculations and motor-geometry
+        optimization; contributed to the registered StandControl application.
+\end{itemize}
+
+\section{Education}
+
+\cvrole{Moscow Institute of Physics and Technology}
+       {M.Sc. in Applied Mathematics and Physics}
+       {Moscow, Russia}{2026 -- 2028 (expected)}
+{\small\textit{Specialization: E-Mobility -- Technologies, Materials and Control}}\par
+\vspace{0.25em}
+\cvrole{Moscow Institute of Physics and Technology}
+       {B.Sc. in Applied Mathematics and Physics}
+       {Moscow, Russia}{2022 -- 2026}
+{\small\textit{Concentration: Radio Engineering and Computer Technology}}\par
+
+\newpage
+
+\section{Additional Engineering Experience}
+
+\cvrole{TIENDA LLC}
+       {Engineer, Technical Department}
+       {Moscow, Russia}{Apr 2026 -- Present}
+\begin{itemize}
+  \item Continue development of a remote-control system for the Motorola XTL2500
+        radio following the project's organizational transfer from PromSvyazRadio.
+\end{itemize}
+
+\vspace{0.3em}
+\cvrole{PromSvyazRadio LLC}
+       {Assistant to the Chief Engineer, Technical Department}
+       {Moscow, Russia}{Feb 2024 -- Apr 2026}
+\begin{itemize}
+  \item Developed a distributed client--server system on Linux-based single-board
+        computers for remote radio control, real-time bidirectional audio, and
+        command processing.
+  \item Implemented SB9600 protocol communication, hardware interfaces, and
+        end-to-end hardware/software integration; contributed to the schematic,
+        PCB, enclosure, testing, and technical documentation.
+\end{itemize}
+
+\section{Selected Research \& Engineering Projects}
+
+\project{Physics-Informed TD3 for End-to-End Torque Control of a PMSM Drive}{
+  \begin{itemize}
+    \item Designed the state and action spaces, reward function, curriculum, and
+          evaluation pipeline for a continuous-control TD3 agent.
+    \item Introduced physics-informed critic objectives based on monotonicity
+          constraints, auxiliary next-state prediction, and switch-aware TD weighting.
+    \item Achieved a torque MAE of 0.079~N\,m and a 98.9\% success rate in the
+          final evaluation, with performance close to classical FOC.
+    \item Evaluated robustness to measurement noise and analyzed real-time MCU
+          deployment constraints. Published at IEEE EDM 2026.
+  \end{itemize}
+}
+
+\vspace{0.25em}
+\project{OptiRunMotorCAD}{
+  Developed a software application for automating Motor-CAD calculations and
+  electric-motor geometry optimization. Registered as a computer program in
+  2025
+  (\href{https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM\&DocNumber=2025693472\&TypeFile=html}{No.~2025693472}).
+}
+
+\vspace{0.4em}
+\project{StandControl}{
+  Co-developed a client--server application for remote power-inverter control,
+  CAN telemetry monitoring, visualization, logging, and test-bench operation.
+  Registered as a computer program in 2026
+  (\href{https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM\&DocNumber=2026614166\&TypeFile=html}{No.~2026614166}).
+}
+
+\section{Selected Coursework \& Training}
+
+\href{https://mipt.ru/institute/events/alternativnyy-kurs-obuchenie-s-podkrepleniem-vesna-2026}{\textbf{Reinforcement Learning}},
+MIPT (Spring 2026)\hspace{0.8em}\textcolor{lightgray}{|}\hspace{0.8em}
+\href{https://huggingface.co/learn/deep-rl-course}{\textbf{Deep Reinforcement Learning Course}},
+Hugging Face
+
+\section{Publications \& Recognition}
+
+\begin{itemize}
+  \item N. Tulupov and D. Kanurin,
+        \href{https://doi.org/10.1109/EDM69524.2026.11632234}{``Physics-Informed TD3 for End-to-End Torque Control of a PMSM Drive,''}
+        \textit{2026 IEEE 27th International Conference of Young Professionals in
+        Electron Devices and Materials (EDM)}, 2026.
+        DOI: 10.1109/EDM69524.2026.11632234.
+  \item N. Tulupov, S. Makov, D. Kanurin, and A. Tishin,
+        \href{https://www.elibrary.ru/item.asp?id=90362673}{``PMSM Electric Drive Calibration Method Using a Reinforcement Learning Algorithm,''}
+        \textit{XII International Conference Engineering \& Telecommunications
+        (En\&T 2025)}, MIPT, Moscow, 2025; abstract published in the proceedings.
+  \item N. Tulupov, S. Makov, D. Kanurin, and A. Tishin,
+        \href{https://www.elibrary.ru/item.asp?id=89026196}{``Calibration Method for a Permanent-Magnet Synchronous Motor (PMSM) Using Deep Reinforcement Learning,''}
+        \textit{III International Youth Conference ``AI Technologies in Science
+        and Education,''} Moscow State University, Moscow, 2025; abstract
+        published in the proceedings. Best Presentation Award, Exact and
+        Engineering Sciences section.
+  \item N. Tulupov and D. Kanurin,
+        \href{https://mipt.ru/upload/\%D0\%9E\%D0\%9A\%D0\%9F\%D0\%98/01\%20\%D0\%A4\%D0\%A0\%D0\%9A\%D0\%A2-2026.pdf}{``Hybrid Control Architecture for a PMSM Electric Drive Using Reinforcement Learning,''}
+        \textit{68th All-Russian Scientific Conference of MIPT}, Moscow, 2026;
+        abstract published in the proceedings.
+\end{itemize}
+
+\section{Languages}
+
+Russian -- Native \hspace{1.4em}\textcolor{lightgray}{|}\hspace{1.4em}
+English -- B2 (Upper-Intermediate)
+
+\end{document}
