@@ -1,0 +1,246 @@
+% Compile with pdfLaTeX.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% Palatino and Helvetica are the pdfLaTeX counterparts closest to the
+% TeX Gyre Pagella / Adventor pairing used in the original CV.
+\usepackage{mathpazo}
+\usepackage[scaled=0.92]{helvet}
+
+\usepackage[a4paper,left=17mm,right=17mm,top=14mm,bottom=14mm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\definecolor{accent}{RGB}{35,132,158}
+\definecolor{textgray}{RGB}{82,86,89}
+\definecolor{lightgray}{RGB}{150,153,155}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdfauthor={Nikolay Tulupov},
+  pdftitle={Nikolay Tulupov -- Radio Systems and Electronics Engineer}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{1.08}
+\emergencystretch=2em
+
+\titleformat{\section}
+  {\needspace{4\baselineskip}\sffamily\bfseries\large\color{accent}}
+  {}{0pt}{\MakeUppercase}
+  [\vspace{0.10em}\color{accent}\titlerule]
+\titlespacing*{\section}{0pt}{1.00em}{0.55em}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=0.28em,
+  topsep=0.32em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\cvrole}[4]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    >{\raggedleft\arraybackslash}p{0.27\textwidth}@{}}
+    {\sffamily\bfseries #1} & {\small\color{textgray}#4} \\
+    {\itshape #2} & {\small\color{lightgray}#3}
+  \end{tabularx}
+  \vspace{0.12em}
+}
+
+\newcommand{\project}[2]{%
+  \needspace{3\baselineskip}
+  {\sffamily\bfseries #1}\par
+  \vspace{0.12em}
+  #2
+}
+
+\newcommand{\skillrow}[2]{%
+  \textbf{#1}\hspace{0.45em}#2\par
+  \vspace{0.13em}
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+  {\fontsize{24}{27}\selectfont\sffamily\bfseries\color{accent}
+   NIKOLAY TULUPOV}\par
+  \vspace{0.22em}
+  {\large\sffamily\color{textgray}
+   Radio Systems \& Electronics Engineer}\par
+  \vspace{0.48em}
+  {\small
+    Moscow, Russia
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{tel:+79307297552}{+7 930 729-75-52}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{mailto:tulupov.nd@phystech.edu}{tulupov.nd@phystech.edu}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{https://t.me/oncoming_lane}{Telegram}
+  }\par
+  \vspace{0.16em}
+  {\small
+    \href{https://github.com/oncominglane}{GitHub}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{https://www.researchgate.net/profile/Nikolay-Tulupov}{ResearchGate}
+    \enspace\textcolor{lightgray}{|}\enspace
+    \href{https://orcid.org/0009-0004-2017-2288}{ORCID: 0009-0004-2017-2288}
+  }
+\end{center}
+
+\section{Profile}
+
+Radio systems and electronics engineer with over two years of experience in
+end-to-end development of hardware--software systems. Designed a remote-control
+system for a Motorola XTL2500 radio, covering circuit and PCB design, embedded
+interfaces, the SB9600 protocol, real-time bidirectional audio, Linux software,
+system integration, testing, and technical documentation. Experienced with
+radio equipment, measurement instruments, single-board computers, and
+microcontrollers.
+
+\section{Core Expertise}
+
+\skillrow{Radio \& Electronics:}{radio equipment, circuit design, schematic
+capture, PCB design, prototyping, hardware debugging, test instruments}
+\skillrow{Embedded \& Interfaces:}{microcontrollers, single-board computers,
+UART, SPI, I2C, RS-232, GPIO, ADC/DAC, CAN}
+\skillrow{Software \& Systems:}{C/C++, Python, Linux, CMake, TCP/IP,
+client--server systems, real-time audio, Git}
+\skillrow{Engineering Tools:}{EasyEDA, MATLAB/Simulink, Motor-CAD, Xilinx ISE,
+oscilloscope, soldering equipment}
+
+\section{Relevant Experience}
+
+\cvrole{TIENDA LLC}
+       {Engineer, Technical Department}
+       {Moscow, Russia}{Apr 2026 -- Present}
+\begin{itemize}
+  \item Continue development of the Motorola XTL2500 remote-control system
+        following the project's organizational transfer from PromSvyazRadio.
+  \item Develop and debug its hardware and software components and maintain
+        project technical documentation.
+\end{itemize}
+
+\vspace{0.35em}
+\cvrole{PromSvyazRadio LLC}
+       {Assistant to the Chief Engineer, Technical Department}
+       {Moscow, Russia}{Feb 2024 -- Apr 2026}
+\begin{itemize}
+  \item Developed a distributed client--server system on Linux-based
+        single-board computers for remote control of a Motorola XTL2500 radio.
+  \item Implemented real-time bidirectional audio streaming, command handling,
+        and interaction with the radio through the SB9600 protocol.
+  \item Parsed SB9600 frames and radio-display data and integrated UART, SPI,
+        I2C, ADC/DAC, and network interfaces.
+  \item Designed the system schematic and PCB and contributed to the enclosure,
+        assembly, testing, and technical documentation.
+  \item Performed end-to-end hardware/software integration and debugged the
+        system using laboratory measurement equipment.
+\end{itemize}
+
+\vspace{0.35em}
+\cvrole{AmpereMagnete}
+       {Engineering Intern, Artificial Intelligence Group}
+       {Troitsk, Moscow, Russia}{Mar 2025 -- Mar 2026}
+\begin{itemize}
+  \item Developed embedded firmware for an AT32-based power inverter and
+        software for remote inverter control and test-bench operation.
+  \item Implemented CAN-based telemetry acquisition, visualization, logging,
+        and experimental data analysis.
+  \item Co-developed StandControl, a registered client--server application for
+        remote control and monitoring of a power inverter.
+\end{itemize}
+
+\newpage
+
+\section{Additional Engineering Experience}
+
+\cvrole{Moscow Institute of Physics and Technology}
+       {Research Engineer, Robotics and Electric Drive Laboratory}
+       {Moscow, Russia}{Mar 2026 -- Present}
+\begin{itemize}
+  \item Develop software for experimental test-bench operation, data
+        processing, visualization, and automated engineering calculations.
+  \item Model electric-drive systems and experimentally validate control
+        algorithms on physical equipment.
+  \item Automate Motor-CAD calculations and electric-motor geometry optimization.
+\end{itemize}
+
+\section{Selected Engineering Projects}
+
+\project{Remote-Control System for the Motorola XTL2500 Radio}{
+  \begin{itemize}
+    \item Designed an end-to-end hardware--software system for operating a radio
+          remotely over an IP network.
+    \item Developed C/C++ software for Linux-based single-board computers,
+          including client--server communication and real-time bidirectional
+          audio using ALSA.
+    \item Implemented SB9600 command exchange, frame parsing, display decoding,
+          and integration with UART, SPI, I2C, ADC/DAC, and Ethernet interfaces.
+    \item Designed the schematic and PCB and participated in enclosure design,
+          system assembly, hardware debugging, and documentation.
+  \end{itemize}
+}
+
+\vspace{0.25em}
+\project{StandControl: Power-Inverter Control and Monitoring System}{
+  \begin{itemize}
+    \item Co-developed a client--server application for remote inverter control
+          over CAN, including torque, speed, and current operating modes.
+    \item Implemented telemetry monitoring, visualization, logging, network
+          communication, and error handling using Python and C/C++.
+    \item Registered as a computer program in 2026
+          (\href{https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM\&DocNumber=2026614166\&TypeFile=html}{No.~2026614166}).
+  \end{itemize}
+}
+
+\vspace{0.25em}
+\project{OptiRunMotorCAD}{
+  Developed a software application for automating Motor-CAD calculations and
+  electric-motor geometry optimization. Registered as a computer program in
+  2025
+  (\href{https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM\&DocNumber=2025693472\&TypeFile=html}{No.~2025693472}).
+}
+
+\section{Education}
+
+\cvrole{Moscow Institute of Physics and Technology}
+       {M.Sc. in Applied Mathematics and Physics}
+       {Moscow, Russia}{2026 -- 2028 (expected)}
+{\small\textit{Specialization: E-Mobility -- Technologies, Materials and Control}}\par
+\vspace{0.25em}
+\cvrole{Moscow Institute of Physics and Technology}
+       {B.Sc. in Applied Mathematics and Physics}
+       {Moscow, Russia}{2022 -- 2026}
+{\small\textit{Concentration: Radio Engineering and Computer Technology}}\par
+
+\section{Selected Publications \& Recognition}
+
+\begin{itemize}
+  \item N. Tulupov and D. Kanurin,
+        \href{https://doi.org/10.1109/EDM69524.2026.11632234}{``Physics-Informed TD3 for End-to-End Torque Control of a PMSM Drive,''}
+        \textit{2026 IEEE 27th International Conference of Young Professionals
+        in Electron Devices and Materials (EDM)}, 2026.
+  \item Best Presentation Award, Exact and Engineering Sciences section,
+        III International Youth Conference ``AI Technologies in Science and
+        Education,'' Moscow State University, 2025.
+\end{itemize}
+
+\section{Languages}
+
+Russian -- Native \hspace{1.4em}\textcolor{lightgray}{|}\hspace{1.4em}
+English -- B2 (Upper-Intermediate)
+
+\end{document}
