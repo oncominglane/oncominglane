@@ -17,30 +17,30 @@ I am Nikolay Tulupov, an engineer and researcher at MIPT working on embedded sys
 
 <p align="left">
   <a href="https://t.me/oncoming_lane" target="_blank">
-    <img src="logos_all/telegram.png" alt="Telegram" width="20"/>
+    <img src="logos/telegram.png" alt="Telegram" width="20"/>
   </a>
   &nbsp; <a href="https://t.me/oncoming_lane" target="_blank">@oncoming_lane</a>
   <br/>
 
   <a href="https://vk.com/oncoming_lane" target="_blank">
-    <img src="logos_all/vk.png" alt="VK" width="20"/>
+    <img src="logos/vk.png" alt="VK" width="20"/>
   </a>
   &nbsp; <a href="https://vk.com/oncoming_lane" target="_blank">oncoming_lane</a>
   <br/>
 
-  <img src="logos_all/email.png" alt="Email" width="20"/>
+  <img src="logos/email.png" alt="Email" width="20"/>
   &nbsp; tulupov.nd@phystech.edu
   <br/>
 
-  <img src="logos_all/school.png" alt="School" width="20"/>
+  <img src="logos/school.png" alt="School" width="20"/>
   &nbsp; Bryansk City Lyceum №1
   <br/>
 
-  <img src="logos_all/institute.png" alt="Institute" width="20"/>
+  <img src="logos/institute.png" alt="Institute" width="20"/>
   &nbsp; Moscow Institute of Physics and Technology
   <br/>
 
-  <img src="logos_all/company.png" alt="Company" width="20"/>
+  <img src="logos/company.png" alt="Company" width="20"/>
   &nbsp; JSC "PromSvyazRadio", JSC "Ampermagnit"
 </p>
 
